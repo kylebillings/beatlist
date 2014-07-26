@@ -59,19 +59,18 @@ a.waves-button:link,
 button.waves-button,
 input.waves-button-input {
     white-space: nowrap;
-    vertical-align: middle;
     cursor: pointer;
     border:none;
     outline:none;
     background:transparent;
     color: inherit;
-    font-size:14px;
     text-align: center;
     text-decoration:none;
 }
 
 .waves-button {
-    padding:10px 15px;
+    padding-left:3px;
+    margin-left: -3px;
     border-radius:2px;
 }
 
