@@ -18,10 +18,12 @@
 
 	<!-- CSS
   ================================================== -->
+    <link rel="stylesheet" href="stylesheets/waves.css">
 	<link rel="stylesheet" href="stylesheets/base.css">
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
 	<link rel="stylesheet" href="stylesheets/fonts.css">
+	
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,35 +36,51 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
+	<script src="js/jquery-1.11.1.min.js"></script>
+
 </head>
 <body>
 
-
-
-	<!-- Primary Page Layout
-	================================================== -->
 	<nav id="nav">
 		<a href="#"><h4>beatli.st</h4></a>
 	</nav>
+
+	
 
 	<div class="container">
 		<div class="sixteen columns" style="margin-bottom: 130px;">
 			<h2 class="remove-bottom center" style="margin-top: 40px;">playlists of refreshing music<br/>curated by Kyle Billings</h2>
 		</div>
 		<div class="one-third column center">
-			<h3>Electronic</h3>
+			<button class="waves-effect waves-button waves-float download-button teal">Hip Hop</button>
 		</div>
 		<div class="one-third column center">
-			<h3>Hip Hop</h3>
+			<button class="waves-effect waves-button waves-float download-button sunset">Indie</button>
 		</div>
 		<div class="one-third column center">
-			<h3>Indie</h3>
+			<button class="waves-effect waves-button download-button teal">Hip Hop</button>
 		</div>
 
 	</div><!-- container -->
 
+<script>
+		var x = $('.download-button').width();
+			$('.download-button').css(
+    		{'height': x + 'px'}
+		);
 
-<!-- End Document
-================================================== -->
+		$(window).resize(function() { 
+ 		var x = $('.download-button').width();
+			$('.download-button').css(
+    		{'height': x + 'px'}
+		);
+ });
+</script>
+
+
+<script type="text/javascript" src="js/waves.js"></script>
+<script type="text/javascript">
+	Waves.displayEffect();
+</script>
 </body>
 </html>
