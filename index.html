@@ -36,8 +36,6 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
-	<script src="js/jquery-1.11.1.min.js"></script>
-
 </head>
 <body>
 
@@ -49,18 +47,38 @@
 
 	<div class="container add-bottom">
 		<div class="twelve columns offset-by-two">
-			<h1 class="remove-bottom" style="margin-top: 40px;">playlists of refreshing music curated by Kyle Billings</h1>
+			<h2 class="remove-bottom" style="margin-top: 40px;">welcome to beatli.st</h2>
 		</div>
 	</div><!-- container -->
+
+	<style>
+		#electro-deluxe-jazz {
+			display: ;
+		}
+		#electro-deluxe-hip-hop {
+			display: ;
+		}
+	</style>
+
 	<div class="container">
 		<div class="twelve columns offset-by-two info link-scaleup">
-			<p>My favorite part about earning a degree at <a target="_blank" href="http://www.berklee.edu">a music school</a> was that everyone I knew was a fanatic about music. Each of my friends has a brilliant personality with musicality as a major pillar; any passing conversation can easily become a new playlist.</p>
-			<p>I love discovering new music. I tune through a ton of noise to find songs that I like. If you want some gems without the digging, or if you're like me and just need an artist to kick off some music archeology, feel encouraged to take a moment.</p>
-			<p>Cheers. Check back soon.</p>
+			<p>Check out Eumig & Chinon's remix of <a href="#crush" class="waves-effect waves-button more">Crush</a> by <a href="#irish-steph" class="waves-effect waves-button more">Irish Steph.</a></p>
+
+			<p><span id="crush">This track is a <a href="#produced" class="waves-effect waves-button more">brilliantly produced</a> and <a href="#performed" class="waves-effect waves-button more">well performed</a> mid-tempo electronic track.</span> <span id="produced">The mix pulses through with meticulous aggression; every subtlety cuts through like a choreographed sequence of cracking whips.</span> <span id="performed">Harmonically, Crush is sophisticated enough to hold a listener at any time, and the mix is rhythmically capable of keeping a dance floor occupied (user tested).</span></p>
+
+			<p><span id="irish-steph">Steph is a Irish–French split living in Cannes, France. He's a classically trained musician turned <a href="#other" class="waves-effect waves-button more">bedroom producer.</a> <span id="other">If you <a href="#artists" class="waves-effect waves-button more">like what you hear,</a> check out some of his <a href="#productions" class="waves-effect waves-button more">other productions.</a></span> <span id="productions">Junky Maggie, the original Crush, or his latest single, Breathe.</span> <span id="artists">Also, consider Louis La Roche, Soulero, and Beat Torrent for more artists of a similar sound.</p></span></span> 
+			</p>
+			<p></p>
 		</div>
 	</div>
 
-	<div class="container remove-bottom">
+	<div class="container">
+		<div class="twelve columns offset-by-two">
+			<a target="_blank" href="https://soundcloud.com/eumigandchinon/irish-steph-crush-feat-eleven"><button class="waves-effect waves-button listen-button sunset">Listen</button></a>
+		</div>
+	</div>
+
+	<!--<div class="container remove-bottom remove-child-margin">
 		<div class="sixteen columns" style="margin-bottom: 130px;">
 			
 		</div>
@@ -73,8 +91,9 @@
 		<div class="one-third column center">
 			<button class="waves-effect waves-button download-button teal">EDM</button>
 		</div>
-	</div><!-- container -->
-	<div class="container add-bottom">
+	</div>-->
+
+	<!--<div class="container add-bottom remove-child-margin">
 		<div class="one-third column center">
 			<button class="waves-effect waves-button download-button teal">Jazz</button>
 		</div>
@@ -84,8 +103,15 @@
 		<div class="one-third column center">
 			<button class="waves-effect waves-button download-button teal">Beats</button>
 		</div>
-	</div><!-- container -->
+	</div>-->
 
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+$('.more').click(function() {
+    var href = $(this).attr('href');
+    $(href).show();
+});
+</script>
 <script>
 		var x = $('.download-button').width();
 			$('.download-button').css(

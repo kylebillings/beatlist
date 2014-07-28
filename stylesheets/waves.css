@@ -63,7 +63,6 @@ input.waves-button-input {
     border:none;
     outline:none;
     background:transparent;
-    color: inherit;
     text-align: center;
     text-decoration:none;
 }
@@ -71,7 +70,13 @@ input.waves-button-input {
 .waves-button {
     padding-left:3px;
     margin-left: -3px;
+    padding-right: 3px;
+    margin-right: -3px;
     border-radius:2px;
+}
+
+.waves-button:hover {
+    color: #fff;
 }
 
 .waves-button-input {
