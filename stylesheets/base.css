@@ -67,6 +67,23 @@
  		padding: 8px;
  	}
 
+ 	.rss2html-note {
+ 		display: none;
+ 	}
+
+ 	.feed-item-desc {
+ 		display: none;
+ 	}
+
+ 	.feed-item-title {
+ 		font-family: "Gotham-Light";
+ 		font-size: 21px;
+ 		line-height: 45px;
+ 	}
+
+ 	.feed-item-title a {
+ 		color: #111;
+ 	}
 
 /* #Typography
 ================================================== */
@@ -108,8 +125,8 @@
 
 /* #Links
 ================================================== */
-	a, a:visited { color: #0066FF; text-decoration: none; outline: 0; }
-	a:hover, a:focus { color: #000; }
+	a, a:visited { color: #888; text-decoration: none; outline: 0; }
+	a:hover, a:focus { color: #bd0000; }
 	p a, p a:visited { line-height: inherit; }
 
 	.info {
