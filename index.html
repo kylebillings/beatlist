@@ -1,142 +1,43 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!doctype html>
+<html lang="en" ng-app="playlist">
 <head>
-
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>beatli.st | curated playlists</title>
-	<meta name="description" content="music discovery through curation">
-	<meta name="author" content="Kyle Billings">
-
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-  ================================================== -->
-    <link rel="stylesheet" href="stylesheets/waves.css">
-	<link rel="stylesheet" href="stylesheets/base.css">
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
-	<link rel="stylesheet" href="stylesheets/layout.css">
-	<link rel="stylesheet" href="stylesheets/fonts.css">
-	
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/feed.js"></script>
-
-	<script>
-  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  	ga('create', 'UA-53426496-1', 'auto');
- 	 ga('send', 'pageview');
-
-	</script>
-
+	<meta charset="UTF-8">
+	<title>Beatlist</title>
+    <link href="css/app.css" rel="stylesheet">
+	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="lib/angular/app.js"></script>
 </head>
 <body>
-	
-	<div class="container add-bottom">
-		<div class="twelve columns offset-by-two">
-			<h2 class="remove-bottom" style="margin-top: 40px;">kyle is listening to:</h2>
+<div class="container">
+	<div ng-controller = "PlaylistController as list">
+		<div class="track-item" ng-repeat = "track in list.tracks">
+			<h1>{{track.title}}</h1>
+			<h3>{{track.artist}} — <em>{{track.album}}</em></h3>
+			<hr/>
 		</div>
-	</div><!-- container -->
-
-	<!--<div class="container">
-		<div class="twelve columns offset-by-two info link-scaleup">
-			<p>Check out Eumig & Chinon's remix of <a href="#crush" class="waves-effect waves-button more">Crush</a> by <a href="#irish-steph" class="waves-effect waves-button more">Irish Steph.</a></p>
-
-			<p><span id="crush">This track is a <a href="#produced" class="waves-effect waves-button more">brilliantly produced</a> and <a href="#performed" class="waves-effect waves-button more">well performed</a> mid-tempo electronic track.</span> <span id="produced">The mix pulses through with meticulous aggression; every subtlety cuts through like a choreographed sequence of cracking whips.</span> <span id="performed">Harmonically, Crush is sophisticated enough to hold a listener at any time, and the mix is rhythmically capable of keeping a dance floor occupied (user tested).</span></p>
-
-			<p><span id="irish-steph">Steph is a Irish–French split living in Cannes, France. He's a classically trained musician turned <a href="#other" class="waves-effect waves-button more">bedroom producer.</a> <span id="other">If you <a href="#artists" class="waves-effect waves-button more">like what you hear,</a> check out some of his <a href="#productions" class="waves-effect waves-button more">other productions.</a></span> <span id="productions">Junky Maggie, the original Crush, or his latest single, Breathe.</span> <span id="artists">Also, consider Louis La Roche, Soulero, and Beat Torrent for more artists of a similar sound.</p></span></span> 
-			</p>
-			<p></p>
-		</div>
-	</div>-->
-
-	<div class="container">
-		<div id="feed" class="twelve columns offset-by-two">
-			<script id="feed-1406662589901970" type="text/javascript" src="http://rss.bloople.net/?url=http%3A%2F%2Fws.audioscrobbler.com%2F1.0%2Fuser%2Fkylebillings%2Frecenttracks.rss&showtitle=false&type=js&id=1406662589901970"></script>
-		</div>
+		<!--<section class="tab" ng-controller = "TabController as tabs">
+        <ul class="nav nav-pills">
+          <li ng-class = "{ active: tabs.isSet(1) }">
+            <a ng-click="tabs.setTab(1)" href>Description</a></li>
+          <li ng-class = "{ active: tabs.isSet(2) }">
+            <a ng-click="tabs.setTab(2)" href>Specs</a></li>
+          <li ng-class = "{ active: tabs.isSet(3) }">
+            <a ng-click="tabs.setTab(3)" href>Reviews</a></li>
+        </ul>
+        <div ng-show = "tabs.isSet(1)">
+          <h4>Description</h4>
+          <blockquote></blockquote>
+        </div>
+        <div ng-show = "tabs.isSet(2)">
+          <h4>Specs</h4>
+          <blockquote>Shine: </blockquote>
+        </div>
+        <div ng-show = "tabs.isSet(3)">
+          <h4>Reviews</h4>
+          <blockquote></blockquote>
+        </div>
+      </section>-->
 	</div>
-	
-
-	<!--<div class="container">
-		<div class="twelve columns offset-by-two">
-			<a target="_blank" href="https://soundcloud.com/eumigandchinon/irish-steph-crush-feat-eleven"><button class="waves-effect waves-button listen-button sunset">Listen</button></a>
-		</div>
-	</div>-->
-
-	<!--<div class="container remove-bottom remove-child-margin">
-		<div class="sixteen columns" style="margin-bottom: 130px;">
-			
-		</div>
-		<div class="one-third column center">
-			<button class="waves-effect waves-button download-button teal">Hip Hop</button>
-		</div>
-		<div class="one-third column center">
-			<button class="waves-effect waves-button download-button teal">Indie</button>
-		</div>
-		<div class="one-third column center">
-			<button class="waves-effect waves-button download-button teal">EDM</button>
-		</div>
-	</div>-->
-
-	<!--<div class="container add-bottom remove-child-margin">
-		<div class="one-third column center">
-			<button class="waves-effect waves-button download-button teal">Jazz</button>
-		</div>
-		<div class="one-third column center">
-			<button class="waves-effect waves-button download-button teal">Rock</button>
-		</div>
-		<div class="one-third column center">
-			<button class="waves-effect waves-button download-button teal">Beats</button>
-		</div>
-	</div>-->
-
-
-<script src="js/jquery-1.11.1.min.js"></script>
-<script>
-$('.more').click(function() {
-    var href = $(this).attr('href');
-    $(href).show();
-});
-</script>
-<script>
-		var x = $('.download-button').width();
-			$('.download-button').css(
-    		{'height': x + 'px'}
-		);
-
-		$(window).resize(function() { 
- 		var x = $('.download-button').width();
-			$('.download-button').css(
-    		{'height': x + 'px'}
-		);
- });
-</script>
-
-
-<script type="text/javascript" src="js/waves.js"></script>
-<script type="text/javascript">
-	Waves.displayEffect();
-</script>
+</div>
 </body>
 </html>
