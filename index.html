@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-	<div ng-controller = "PlaylistController as list">
+	<div class="twelve-columns offset-by-two" ng-controller = "PlaylistController as list">
 		<div class="track-item" ng-repeat = "track in list.tracks">
 			<h1>{{track.title}}</h1>
 			<h3>{{track.artist}} — <em>{{track.album}}</em></h3>
