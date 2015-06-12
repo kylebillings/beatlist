@@ -8,7 +8,27 @@ function WaveformVisualizer() {
     var gridWidth = null;
     var gridHeight = null;
 
-    // Calculate and initialise values used when drawing audio data
+    (function() {
+    var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d');
+
+    // resize the canvas to fill browser window dynamically
+    window.addEventListener('resize', resizeCanvas, false);
+
+    function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            /**
+             * Your drawings need to be inside this function otherwise they will be reset when 
+             * you resize the browser window and the canvas goes will be cleared.
+             */
+            drawStuff(); 
+    }
+    resizeCanvas();
+
+    function drawStuff() {
+        // Calculate and initialise values used when drawing audio data
     this.initialise = function(graphics, analyser) {
         analyser.fftSize = 2048;
         bufferLength = analyser.frequencyBinCount;
@@ -19,7 +39,7 @@ function WaveformVisualizer() {
         gridWidth = width / bufferLength;
         gridHeight = height / analyser.fftSize * 2;
 
-        graphics.strokeStyle = "#000";
+        graphics.strokeStyle = "#7D8CFE";
     }
 
     // Draw audio data
@@ -46,4 +66,6 @@ function WaveformVisualizer() {
         graphics.stroke();
         graphics.closePath();
     }
+    }
+})();
 }
