@@ -42,8 +42,7 @@ function WaveformVisualizer() {
                 graphics.lineTo(x, y);
             }
         }
-        context = canvas.context2d;    
-        context.translate(0.5, 0.5);
+
         graphics.stroke();
         graphics.closePath();
     }
