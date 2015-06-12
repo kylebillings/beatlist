@@ -19,7 +19,7 @@ function WaveformVisualizer() {
         gridWidth = width / bufferLength;
         gridHeight = height / analyser.fftSize * 2;
 
-        graphics.strokeStyle = "#7D8CFE";
+        graphics.strokeStyle = "#000";
     }
 
     // Draw audio data
@@ -42,9 +42,7 @@ function WaveformVisualizer() {
                 graphics.lineTo(x, y);
             }
         }
-        context = canvas.context2d;    
-        context.translate(0.5, 0.5);
-        graphics.lineWidth = 1;
+
         graphics.stroke();
         graphics.closePath();
     }
