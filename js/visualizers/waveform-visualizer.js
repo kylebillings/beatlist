@@ -42,7 +42,7 @@ function WaveformVisualizer() {
                 graphics.lineTo(x, y);
             }
         }
-
+        graphics.lineWidth = 1;
         graphics.stroke();
         graphics.closePath();
     }
