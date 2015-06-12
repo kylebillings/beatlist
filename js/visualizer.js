@@ -3,14 +3,15 @@ function Visualizer(graphics, analyser) {
     this.graphics = graphics;
     this.analyser = analyser;
     this.strategies = {
-        waveform : {
-            name : "Waveform",
-            obj : new WaveformVisualizer()
-        },
         minimalistic : {
             name : "Minimalistic",
             obj : new MinimalisticVisualizer()
+        },
+        waveform : {
+            name : "Waveform",
+            obj : new WaveformVisualizer()
         }
+
     };
 
     this.setStrategy = function(key) {
