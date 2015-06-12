@@ -10,7 +10,7 @@ function WaveformVisualizer() {
 
     // Calculate and initialise values used when drawing audio data
     this.initialise = function(graphics, analyser) {
-        analyser.fftSize = 4096;
+        analyser.fftSize = 2048;
         bufferLength = analyser.frequencyBinCount;
         streamData = new Uint8Array(bufferLength);
 
@@ -42,7 +42,9 @@ function WaveformVisualizer() {
                 graphics.lineTo(x, y);
             }
         }
-
+        context = canvas.context2d;    
+        context.translate(0.5, 0.5);
+        graphics.lineWidth = 1;
         graphics.stroke();
         graphics.closePath();
     }
